@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Excel Selection Changed Demo</title>
+    <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/App.css" />
+    <script src="../Scripts/jquery-1.7.1.js"></script>
+    <!--<script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>-->
+    <script src="../Scripts/knockout-2.2.1.debug.js"></script>
+    <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
+    <script src="../Scripts/Office/1.0/office.js"></script>
+    <script src="../Scripts/ExcelSelectionChangedDemo.js"></script>
+</head>
+<body>
+    <div id="content">
+        <h1>Excel Selection Demo</h1>
+        <p>Thanks for using this App for Office. This is just a simple demonstration that dumps out a JSON representation of the selected data. You can view the source of this application <a href="http://github.com/MitchDenny/ExcelSelectionChangedDemo">at GitHub</a>.</p>
+        <div id="history">
+            <h2>Previous Selections</h2>
+            <div class="previous-selections" data-bind="foreach: previousSelections">
+                <div class="previous-selection">
+                    <h3 data-bind="text: status() + ' (#' + sequence() + ')'"></h3>
+                    <code data-bind="text: jsonText"></code>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
